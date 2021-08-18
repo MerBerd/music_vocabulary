@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block main %}
+    <nav id = "navbar" class="navbar navbar-expand-sm">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link nav_items" href="/"><i class="fas fa-arrow-left"></i></a>
+                    </li>
+                    <div class="dropdown">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">Harpy saýla</button>
+                          <div class="dropdown-menu">
+                              {% for letter in vocabulary %}
+                            <a class="drop down-item" href="#{{letter}}" >{{letter}}</a>
+                              {% endfor %}
+                          </div>
+                        </div>
+                </ul>
+              </nav>
+
+
+
+
+            {% for letter in vocabulary %}
+                <h1 id="{{letter}}" style="text-align:center; font-family:'Anton', sans-serif; color:green">{{letter}}</h1>
+                {% for word in vocabulary[letter] %}
+              <div style="border: 2px solid green; border-radius: 5px; margin: 55px;">
+                  <p  style="text-align: center;"><b>{{word[1]}} ({{word[2]}})</b></p>
+                  <p style="text-align: center;">{{word[3]}}</p>
+
+                </div>
+                {% endfor %}
+                {% endfor %}
+
+
+
+{% endblock %}

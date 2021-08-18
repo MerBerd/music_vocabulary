@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block main %}
+ <nav class="navbar navbar-expand-sm">
+     <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link nav_items" href="/"><i class="fas fa-arrow-left"></i></a>
+        </li>
+     </ul>
+ </nav>
+
+<div class="container" >
+    <div class="jumbotron" style="background-color:white;">
+        <div class="card">
+            <div class="card-header" style="text-align: center;">{{data[0][0]}} ({{data[0][1]}})</div>
+            <div class="card-body">{{data[0][2]}}</div>
+        </div>
+
+        <!--<form action="/liked" method="post">
+            <input id="words" class="form-control mr-sm-2" type="search" name="word" style="display:none" value="{{data[0]['word']}}">
+            <input  class="btn btn-outline-success my-2 my-sm-0" type="submit" value="Haladym"></form> -->
+    </div>
+</div>
+
+{% endblock %}
